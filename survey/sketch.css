@@ -1,54 +1,114 @@
-body {
+    body {
   background-image: url(http://i.imgur.com/Nbi7bYI.jpg);
-background-repeat: no-repeat;
-background-position: center center;
-background-attachment: fixed;
-background-size: cover;}
-p{
-      background-image: url(http://i.imgur.com/Nbi7bYI.jpg);
-background-repeat: no-repeat;
-background-position: center center;
-background-attachment: fixed;
-background-size: cover;}
-    
-div.LOL {
-background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    position: absolute;
+    }
+
+            body {
+                background-color: white;
+            }
+            .fly-in-text {
+                list-style: none;
+                position: absolute;
+                left: 48%;
+                top: 5%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+            .fly-in-text li {
+                display: inline-block;
+                margin-right: 50px;
+                font-family: Open Sans, Arial;
+                font-weight: 300;
+                font-size: 4em;
+                color: black;
+                opacity: 1;
+                transition: all 2.5s ease;
+            }
+            .fly-in-text li:last-child {
+                margin-right: 0;
+            }
+            .fly-in-text.hidden li {
+                opacity: 0;
+            }
+            .fly-in-text.hidden li:nth-child(1) { transform: translateX(-200px) translateY(-200px); }
+            .fly-in-text.hidden li:nth-child(2) { transform: translateX(20px) translateY(100px); }
+            .fly-in-text.hidden li:nth-child(3) { transform: translateX(-150px) translateY(-80px); }
+            .fly-in-text.hidden li:nth-child(4) { transform: translateX(10px) translateY(-200px); }
+            .fly-in-text.hidden li:nth-child(5) { transform: translateX(-300px) translateY(200px); }
+            .fly-in-text.hidden li:nth-child(6) { transform: translateX(20px) translateY(-20px); }
+            .fly-in-text.hidden li:nth-child(7) { transform: translateX(30px) translateY(200px); }
+            
+#content{
+position: relative;
+font-size: 40px;
 }
-div.LOL p {
-    padding-left: 25px;
-font-family: Verdana;
-font-size: 48px;
-font-style: normal;
-font-weight: bold;
-text-decoration: blink;
-text-transform: none;
-letter-spacing: 10px;
-color: #000000;
-background-color: #ffffff;
+.calender{
+    position:relative
 }
 
-form.yolo{
-    padding-left:30px;
-    font-family: Verdana;
-font-size: 20px;
-font-style: normal;
-font-weight: bold;
-text-decoration: blink;
-text-transform: none;
-
-color: #000000;
+/*button#authorize-button{
+    position: fixed;
+    text-align: center;
+    }*/
+div.container{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: black;
+    font-family: Open Sans, Arial;
+    font-weight: 300;
+    border-width: 15px;
+     border-style: solid;
+    border-color:black;
+   width: 500px;
+   height: 1150px;
+   margin: auto;
+    position:relative;
+     
+}
+#success{
+   position:absolute;
+}
+hr.star-light{
+    color:black;
 }
 .button1{
-background-color: #4CAF50; /* Green */
+background-color: white; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 1px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    width: 40%;
+    width: 45%;
+    height: 100%;
     border-radius: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: black;
+}
+
+p.para1{
+    font-size: 35px;
+font-family: 'Josefin Sans', sans-serif;
+    color: white;
+}
+p.para2{
+    font-size: 30px;
+font-family: 'Josefin Sans', sans-serif;
+    color: white;
+}
+img.image1{
+    width: 20%;
+    height: auto;
+}
+
+p.image2{
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+font-family: 'Josefin Sans', sans-serif;
+    color: white;
 }
 .button1:hover {
     opacity: 0.5;
@@ -57,8 +117,56 @@ background-color: #4CAF50; /* Green */
 	position:relative;
 	top:1px;
 }
-#content{
-    text-align: center;
-    font-size: 40px;
 
+/*#particle.js{
+    position:relative;
+}*/
+
+
+#artist{
+    font-size: 20px;
+font-family: 'Josefin Sans', sans-serif;
+width: 400px;
+    
+}
+#age{
+font-size: 20px;
+font-family: 'Josefin Sans', sans-serif;
+width: 400px;
+}
+#subject{
+font-size: 20px;
+font-family: 'Josefin Sans', sans-serif;
+width: 400px;
+}
+#activity{
+font-size: 20px;
+font-family: 'Josefin Sans', sans-serif;
+width: 400px;
+}
+#hate{
+font-size: 20px;
+font-family: 'Josefin Sans', sans-serif;
+width: 400px;
+}
+#gender{
+font-size: 20px;
+font-family: 'Josefin Sans', sans-serif;
+width: 400px;
+}
+#love{
+font-size: 20px;
+font-family: 'Josefin Sans', sans-serif;
+width: 400px;
+}
+#name{
+font-size: 20px;
+font-family: 'Josefin Sans', sans-serif;
+width: 400px;
+}
+.h33{
+    font-size: 30px;
+font-family: 'Josefin Sans', sans-serif;
+    color: white; 
+    width: 400px;
 }
