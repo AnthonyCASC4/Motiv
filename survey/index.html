@@ -16,9 +16,9 @@
 
 <body id="particles-js" style="position:relative">
     <!--<div id="particles-js">-->
-        
+
     <div>
-    
+
         <ul class="fly-in-text hidden">
             <li>M</li>
             <li>O</li>
@@ -63,21 +63,27 @@
                     <p>
                         <br>
                         <center>
-
+                            <button class="button1" id="authorize-button">Authorize</button>
+                            <button class="button1" id="signout-button">Sign Out</button>
                             <form class="yolo">
                                 <h3 class="h33"> What is your name</h4>
-                                <input id="name" type="text" name="age">
-                               <h3 class="h33"> What is your age?( Optional )</h4>
-                                <input id="age" type="text" name="age">
-                                <h3 class="h33"> Who is your favorite Artist?</h4>
-                                <input id="artist" type="text" name="artist"><h3 class="h33">What is your favorite subject?</h4>
-                                <input id="subject" type="text" name="subject"><h3 class="h33"> What is your favorite outdoor activity?</h4>
-                                <input id="activity" type="text" name="activity"><h3 class="h33">What do you hate the most?</h4>
-                                <input id="hate" type="text" name="hate"><h3 class="h33">What is your gender?</h4>
-                                <input id="gender" type="text" name="gender"><h3 class="h33">What do you love?</h4>
-                                <input id="love" type="text" name="love"><br><br>
-                                <br>
-                                <button class="button1" onclick="updateDB()">submit</button>
+                                    <input id="name" type="text" name="age">
+                                    <h3 class="h33"> What is your age?( Optional )</h4>
+                                        <input id="age" type="text" name="age">
+                                        <h3 class="h33"> Who is your favorite Artist?</h4>
+                                            <input id="artist" type="text" name="artist">
+                                            <h3 class="h33">What is your favorite subject?</h4>
+                                                <input id="subject" type="text" name="subject">
+                                                <h3 class="h33"> What is your favorite outdoor activity?</h4>
+                                                    <input id="activity" type="text" name="activity">
+                                                    <h3 class="h33">What do you hate the most?</h4>
+                                                        <input id="hate" type="text" name="hate">
+                                                        <h3 class="h33">What is your gender?</h4>
+                                                            <input id="gender" type="text" name="gender">
+                                                            <h3 class="h33">What do you love?</h4>
+                                                                <input id="love" type="text" name="love"><br><br>
+                                                                <br>
+                                                                <button class="button1" onclick="updateDB(); change();">submit</button>
                             </form>
                         </center>
 
@@ -86,7 +92,7 @@
                         <br>
                         <br>
 
-                        
+
                     </p>
                 </div>
                 <div class="col-lg-4">
@@ -104,10 +110,10 @@
     </div>
     </div>
 
-    
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
-   
+
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
     <script>
         // Initialize Firebase
@@ -121,9 +127,11 @@
         };
         firebase.initializeApp(config);
     </script>
-    <!--<script src="./main.js"></script>-->
+    <script src="main.js"></script>
+    <script src="script.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
 
-   
+
 </body>
 
 </html>

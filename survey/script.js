@@ -135,7 +135,7 @@ function listUpcomingEvents() {
 }
 
 function change() {
-  $("form").empty();
+  $(".success").empty();
   $("body").append("<pre id='content'></pre>")
   listUpcomingEvents();
   $("body").append("<button onclick='notifyMe()'>Notify me!</button>");
