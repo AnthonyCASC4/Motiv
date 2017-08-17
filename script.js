@@ -1,4 +1,3 @@
-//load particle js
 particlesJS.load('particles-js', 'particles.json', function () {
   console.log('particles.js config loaded');
 });
@@ -53,7 +52,7 @@ function updateSigninStatus(isSignedIn) {
     signoutButton.style.display = 'block';
     // listUpcomingEvents();
     if (run == true) {
-      window.location.replace("Survey/index.html");
+      window.location.replace("survey/index.html");
       run == false;
     }
 

@@ -1,3 +1,4 @@
+var rand = Math.floor(Math.random()*4);
 var gym = [
         {
         name : "Sylvester Stallone",

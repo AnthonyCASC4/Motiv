@@ -1,6 +1,11 @@
 // Client ID and API key from the Developer Console
+
 var rum = true;
+var rua = true;
+var date;
 var CLIENT_ID = '171943822330-bl7sccuonh491kq780ka1smj245ur72c.apps.googleusercontent.com';
+var structure;
+var now;
 
 // Array of API discovery doc URLs for APIs used by the quickstart
 var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
@@ -100,14 +105,13 @@ function listUpcomingEvents() {
     'orderBy': 'startTime'
   }).then(function (response) {
     var events = response.result.items;
-    console.log(events);
     appendPre('Upcoming events:');
 
     if (events.length > 0) {
       for (i = 0; i < events.length; i++) {
         var event = events[i];
         var when = event.start.dateTime;
-        var date = new Date(when);
+        date = new Date(when);
         var yr = date.getFullYear();
         var mth = date.getMonth() + 1;
         var dt = date.getDate();
@@ -115,14 +119,24 @@ function listUpcomingEvents() {
         var min = date.getMinutes();
         var sec = date.getSeconds();
 
-        if (dt < 10) {
-          dt = '0' + dt;
+        if (mth.toString().length == 1) {
+          var mth = '0' + mth;
         }
-        if (mth < 10) {
-          mth = '0' + mth;
+        if (dt.toString().length == 1) {
+          var dt = '0' + dt;
+        }
+        if (hr.toString().length == 1) {
+          var hr = '0' + hr;
+        }
+        if (min.toString().length == 1) {
+          var min = '0' + min;
+        }
+        if (sec.toString().length == 1) {
+          var sec = '0' + sec;
         }
 
-        var structure = mth + '-' + dt + '-' + yr + " Start:" + hr + ":" + min ;
+        structure = mth + '-' + dt + '-' + yr + " T:" + hr + ":" + min;
+
         if (!when) {
           when = event.start.date;
         }
@@ -131,67 +145,37 @@ function listUpcomingEvents() {
     } else {
       appendPre('No upcoming events found.');
     }
+
   });
 }
 
 function change() {
-  $("form").empty();
-  $("body").append("<pre id='content'></pre>")
+  $(".success").empty();
+  $("body").append("<pre id='content'></pre>");
   listUpcomingEvents();
-  $("body").append("<button onclick='notifyMe()'>Notify me!</button>");
-
-
+  getDateTime();
 }
 document.addEventListener('DOMContentLoaded', function () {
   if (!Notification) {
     alert('Desktop notifications not available in your browser. Try Chromium.');
     return;
   }
-
   if (Notification.permission !== "granted")
     Notification.requestPermission();
 });
 
-function notifyMe() {
-  if (Notification.permission !== "granted")
-    Notification.requestPermission();
-  else {
-    var notification = new Notification('Notification title', {
-      icon: '',
-      body: "Hey there! You've been notified!",
-    });
 
-    notification.onclick = function () {
-      window.open("");
-    };
-
+var struc = setInterval(function check() {
+  console.log(now);
+  console.log(date);
+  now = new Date();
+  if (now >= date) {
+    if (rua == true) {
+      var notification = new Notification('Motiv', {
+        icon: 'https://files.slack.com/files-tmb/T6139LFPE-F6QMA8UCX-8d56cefc47/ic.mo_480.png',
+        body: gym[rand].quote + "\n" + "By: " + gym[rand].name,
+      });
+      rua = false;
+    }
   }
-
-}
-function getDateTime() {
-  var now = new Date();
-  var year = now.getFullYear();
-  var month = now.getMonth() + 1;
-  var day = now.getDate();
-  var hour = now.getHours();
-  var minute = now.getMinutes();
-  var second = now.getSeconds();
-  if (month.toString().length == 1) {
-    var month = '0' + month;
-  }
-  if (day.toString().length == 1) {
-    var day = '0' + day;
-  }
-  if (hour.toString().length == 1) {
-    var hour = '0' + hour;
-  }
-  if (minute.toString().length == 1) {
-    var minute = '0' + minute;
-  }
-  if (second.toString().length == 1) {
-    var second = '0' + second;
-  }
-  var dateTime = year + '-' + month + '-' + day + 'T:' + hour + ':' + minute + ':' + second;
-  return dateTime;
-}
-
+}, 1000);
